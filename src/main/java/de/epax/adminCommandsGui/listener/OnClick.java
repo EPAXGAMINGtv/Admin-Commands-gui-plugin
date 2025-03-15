@@ -2,6 +2,7 @@ package de.epax.adminCommandsGui.listener;
 
 import de.epax.adminCommandsGui.AdminCommandsGui;
 import de.epax.adminCommandsGui.util.ItemBuilder;
+import de.epax.adminCommandsGui.values.Booleans;
 import org.bukkit.BanEntry;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -12,15 +13,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
+import static de.epax.adminCommandsGui.values.Booleans.*;
+
 
 public class OnClick implements Listener {
 
+
+
     @EventHandler
     public void OnClick(InventoryClickEvent e){
-        boolean creative = false;
-        boolean survival = false;
-        boolean ban = false;
-        boolean kick = false;
+
         if (e.getWhoClicked() instanceof  Player p) {
             String getInv = e.getView().getTitle();
 
@@ -47,20 +49,24 @@ public class OnClick implements Listener {
                     target.kickPlayer("Du wurdest von einen Admin gekickt!");
                     p.closeInventory();
                 } else if (survival ) {
+                    survival =false;
                     if (target.getGameMode().equals(GameMode.SURVIVAL)){
                         p.sendMessage("Dieser Spieler ist bereits im SuvivalModus");
                         p.closeInventory();
                     }else {
                         target.sendMessage("Du wurdest in SurivalModus Gesetzt");
                         target.setGameMode(GameMode.SURVIVAL);
+                        p.closeInventory();
                     }
                 } else if (creative ) {
+                    creative = false;
                     if (target.getGameMode().equals(GameMode.CREATIVE)){
                         p.sendMessage("Dieser Spieler ist bereits im CreativeModus");
                         p.closeInventory();
                     }else {
                         target.sendMessage("Du wurdest in CreativeModus Gesetzt");
                         target.setGameMode(GameMode.CREATIVE);
+                        p.closeInventory();
                     }
                 }
             }
