@@ -1,8 +1,8 @@
 name: admin-commands-gui
-version: '1.0'
+version: '1.1'
 main: de.epax.adminCommandsGui.AdminCommandsGui
 api-version: '1.21'
-authors: [ EPAXGAMING ]
+authors: [ EPAXGAMING ingameName HxlpM3 ]
 description: A Minecraft Plugin for a Admin Menu
 
 commands:
