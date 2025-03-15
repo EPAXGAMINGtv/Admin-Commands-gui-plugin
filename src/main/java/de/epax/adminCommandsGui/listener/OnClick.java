@@ -28,9 +28,10 @@ public class OnClick implements Listener {
                 e.setCancelled(true);
             }
 
-            int slot = e.getSlot();
+            int slot = e.getRawSlot();
 
             Player target = OnClickPlayerSelection.getSelectedPlayer(p);
+
             if (slot == 0) {
                 if (getInv.equals("Admin-gui")) {
                     AdminCommandsGui.openPlayerMenu(0, p);
