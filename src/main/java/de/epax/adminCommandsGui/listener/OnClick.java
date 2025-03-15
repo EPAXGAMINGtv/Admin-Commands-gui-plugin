@@ -4,6 +4,7 @@ import de.epax.adminCommandsGui.AdminCommandsGui;
 import de.epax.adminCommandsGui.util.ItemBuilder;
 import org.bukkit.BanEntry;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -55,6 +56,37 @@ public class OnClick implements Listener {
                     if (target != null) {
                         target.kickPlayer("Du wurdest von einen Admin geKickt");
                         p.sendMessage("Du hast " + target.getName() + " geKickt.");
+                    } else {
+                        p.sendMessage("Kein Spieler wurde ausgewählt!");
+                    }
+                }
+
+            }
+            if (slot == 2) {
+                if (getInv.equals("Admin-gui")) {
+                    AdminCommandsGui.openPlayerMenu(0, p);
+                }
+
+                if (getInv.equals("SeletedPlayer")) {
+                    if (target != null) {
+                        target.setGameMode(GameMode.CREATIVE);
+                        p.sendMessage("Du hast " + target.getName() + "Im Creative Modus Gesetzt!.");
+                    } else {
+                        p.sendMessage("Kein Spieler wurde ausgewählt!");
+                    }
+                }
+
+            }
+
+            if (slot == 3) {
+                if (getInv.equals("Admin-gui")) {
+                    AdminCommandsGui.openPlayerMenu(0, p);
+                }
+
+                if (getInv.equals("SeletedPlayer")) {
+                    if (target != null) {
+                        target.setGameMode(GameMode.SURVIVAL);
+                        p.sendMessage("Du hast " + target.getName() + "Im Survival Modus Gesetzt!.");
                     } else {
                         p.sendMessage("Kein Spieler wurde ausgewählt!");
                     }

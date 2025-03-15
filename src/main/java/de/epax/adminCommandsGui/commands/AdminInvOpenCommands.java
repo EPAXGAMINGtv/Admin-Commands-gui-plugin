@@ -25,6 +25,9 @@ public class AdminInvOpenCommands implements CommandExecutor {
 
                    inventory.setItem(0, new ItemBuilder(PAPER).setDisplayname("§cBan Player").build());
                    inventory.setItem(1, new ItemBuilder(PAPER).setDisplayname("§cKick Player").build());
+                   inventory.setItem(2, new ItemBuilder(PAPER).setDisplayname("§cSet Creative Mode for Player").build());
+                   inventory.setItem(3, new ItemBuilder(PAPER).setDisplayname("§cSet Survival Mode for Player").build());
+
                    p.openInventory(inventory);
                }else {
                    p.sendMessage("Du hast keine Erlaubnis dies zu tun !");
