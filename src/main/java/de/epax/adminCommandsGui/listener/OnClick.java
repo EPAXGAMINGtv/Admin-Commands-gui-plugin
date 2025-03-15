@@ -36,17 +36,17 @@ public class OnClick implements Listener {
 
             Player target = OnClickPlayerSelection.getSelectedPlayer(p);
             if (getInv.equals("§cSeletedPlayer")){
-                if (ban==true){
+                if (ban){
                     ban=false;
                     Bukkit.getBanList(org.bukkit.BanList.Type.NAME).addBan(target.getName(), "AdminBan", null, null);
                     target.kickPlayer("Du wurdest von einem Admin gebannt");
                     p.sendMessage("Du hast " + target.getName() + " gebannt.");
                     p.closeInventory();
-                } else if (kick==true) {
+                } else if (kick) {
                     kick = false;
                     target.kickPlayer("Du wurdest von einen Admin gekickt!");
                     p.closeInventory();
-                } else if (survival == true) {
+                } else if (survival ) {
                     if (target.getGameMode().equals(GameMode.SURVIVAL)){
                         p.sendMessage("Dieser Spieler ist bereits im SuvivalModus");
                         p.closeInventory();
@@ -54,7 +54,7 @@ public class OnClick implements Listener {
                         target.sendMessage("Du wurdest in SurivalModus Gesetzt");
                         target.setGameMode(GameMode.SURVIVAL);
                     }
-                } else if (creative == true) {
+                } else if (creative ) {
                     if (target.getGameMode().equals(GameMode.CREATIVE)){
                         p.sendMessage("Dieser Spieler ist bereits im CreativeModus");
                         p.closeInventory();
