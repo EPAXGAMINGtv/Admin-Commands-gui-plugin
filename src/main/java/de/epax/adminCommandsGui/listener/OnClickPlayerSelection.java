@@ -27,7 +27,7 @@ public class OnClickPlayerSelection implements Listener {
 
         String title = e.getView().getTitle();
 
-        if (title.startsWith("SeletedPlayer")) {
+        if (title.startsWith("§cSeletedPlayer")) {
             e.setCancelled(true);
 
             ItemStack clickedItem = e.getCurrentItem();

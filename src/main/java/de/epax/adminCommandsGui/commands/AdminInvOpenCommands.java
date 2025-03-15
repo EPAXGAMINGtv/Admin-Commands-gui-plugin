@@ -17,7 +17,7 @@ public class AdminInvOpenCommands implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player p){
                if (p.isOp()){
-                   Inventory inventory = Bukkit.createInventory(null, 9 * 6, "Admin-gui");
+                   Inventory inventory = Bukkit.createInventory(null, 9 * 6, "§cAdmin-gui");
 
                    for (int i = 0; i < 9 * 6; i++) {
                        inventory.setItem(i, new ItemBuilder(BLACK_STAINED_GLASS_PANE).setDisplayname("").build());

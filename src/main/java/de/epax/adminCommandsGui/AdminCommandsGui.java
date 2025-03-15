@@ -45,7 +45,7 @@ public final class AdminCommandsGui extends JavaPlugin {
         if (page < 0) page = 0;
         if (page >= totalPages) page = totalPages - 1;
 
-        Inventory SelectPlayer = Bukkit.createInventory(null, 9 * 6, "SeletedPlayer");
+        Inventory SelectPlayer = Bukkit.createInventory(null, 9 * 6, "§cSeletedPlayer");
 
         for (int i = 0; i < 9 * 6; i++) {
             SelectPlayer.setItem(i, new ItemBuilder(Material.BLACK_STAINED_GLASS_PANE).setDisplayname("").build());
