@@ -41,8 +41,8 @@ public class OnClick implements Listener {
                     Bukkit.getBanList(org.bukkit.BanList.Type.NAME).addBan(target.getName(), "AdminBan", null, null);
                     target.kickPlayer("Du wurdest von einen Admin gebant");
                     p.sendMessage("Du hast " + target.getName() + " gebannt.");
+                    target = null;
                 }
-
             } else if (slot == 1) {
                 if (getInv.equals("Admin-gui")) {
                     AdminCommandsGui.openPlayerMenu(0, p);
@@ -51,6 +51,7 @@ public class OnClick implements Listener {
                 if (getInv.equals("SeletedPlayer")) {
                     target.kickPlayer("Du wurdest von einen Admin geKickt");
                     p.sendMessage("Du hast " + target.getName() + " geKickt.");
+                    target = null;
                 }
 
             } else if (slot == 2) {
@@ -61,6 +62,7 @@ public class OnClick implements Listener {
                 if (getInv.equals("SeletedPlayer")) {
                     target.setGameMode(GameMode.CREATIVE);
                     p.sendMessage("Du hast " + target.getName() + " im Creative Modus gesetzt.");
+                    target = null;
                 }
 
             } else if (slot == 3) {
@@ -71,7 +73,9 @@ public class OnClick implements Listener {
                 if (getInv.equals("SeletedPlayer")) {
                     target.setGameMode(GameMode.SURVIVAL);
                     p.sendMessage("Du hast " + target.getName() + " im Survival Modus gesetzt.");
+                    target = null;
                 }
+
             }
         }
     }
