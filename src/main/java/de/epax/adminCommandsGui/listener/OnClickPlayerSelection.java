@@ -50,6 +50,7 @@ public class OnClickPlayerSelection implements Listener {
 
     public static Player getSelectedPlayer(Player player) {
         UUID selectedUUID = selectedPlayers.get(player.getUniqueId());
+
         return (selectedUUID != null) ? Bukkit.getPlayer(selectedUUID) : null;
     }
 

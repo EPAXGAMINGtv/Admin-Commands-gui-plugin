@@ -49,29 +49,35 @@ public class OnClick implements Listener {
                     target.kickPlayer("Du wurdest von einem Admin gebannt");
                     p.sendMessage("Du hast " + target.getName() + " gebannt.");
                     p.closeInventory();
+                    target = null;
                 } else if (kick) {
                     kick = false;
                     target.kickPlayer("Du wurdest von einen Admin gekickt!");
                     p.closeInventory();
+                    target = null;
                 } else if (survival ) {
                     survival =false;
                     if (target.getGameMode().equals(GameMode.SURVIVAL)){
                         p.sendMessage("Dieser Spieler ist bereits im SuvivalModus");
                         p.closeInventory();
+                        target = null;
                     }else {
                         target.sendMessage("Du wurdest in SurivalModus Gesetzt");
                         target.setGameMode(GameMode.SURVIVAL);
                         p.closeInventory();
+                        target = null;
                     }
                 } else if (creative ) {
                     creative = false;
                     if (target.getGameMode().equals(GameMode.CREATIVE)){
                         p.sendMessage("Dieser Spieler ist bereits im CreativeModus");
                         p.closeInventory();
+                        target = null;
                     }else {
                         target.sendMessage("Du wurdest in CreativeModus Gesetzt");
                         target.setGameMode(GameMode.CREATIVE);
                         p.closeInventory();
+                        target = null;
                     }
                 }
                 }
