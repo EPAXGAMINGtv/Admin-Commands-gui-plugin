@@ -38,6 +38,11 @@ public class OnClick implements Listener {
 
             Player target = OnClickPlayerSelection.getSelectedPlayer(p);
             if (getInv.equals("§cSeletedPlayer")){
+                if (target.equals(null)){
+                    p.closeInventory();
+                    p.sendMessage("Kein spieler ausgewählt");
+                }else {
+
                 if (ban){
                     ban=false;
                     Bukkit.getBanList(org.bukkit.BanList.Type.NAME).addBan(target.getName(), "AdminBan", null, null);
@@ -68,6 +73,7 @@ public class OnClick implements Listener {
                         target.setGameMode(GameMode.CREATIVE);
                         p.closeInventory();
                     }
+                }
                 }
             }
             if (slot == 0) {
